@@ -10,7 +10,9 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test"
+    "test": "ember test",
+    "build:prod:tinymce": "time DEBUG=* TINY_MCE=true ember build --prod",
+    "build:prod": "time DEBUG=* ember build --prod"
   },
   "repository": "",
   "engines": {
