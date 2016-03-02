@@ -2,34 +2,29 @@
 
 If you `npm run build:prod` you'll see a lot of console output. When it completes, you can see the time that it took in the final output.
 
-The time difference between `npm run build:prod:tinymce` and `npm run build:prod` is significant.
+The time difference between `npm run build:prod:tinymce` and `npm run build:prod` is significant on my system.
 
-On my machine:
+### My setup:
 
 System info
->  Model Name:  MacBook Pro
-  Model Identifier: MacBookPro11,1
-  Processor Name: Intel Core i5
-  Processor Speed:  2.4 GHz
-  Number of Processors: 1
-  Total Number of Cores:  2
-  L2 Cache (per Core):  256 KB
-  L3 Cache: 3 MB
-  Memory: 16 GB
-  Boot ROM Version: MBP111.0138.B16
-  SMC Version (system): 2.16f68
-  Serial Number (system): C02M30R3FH04
-  Hardware UUID:  A1B27850-91C2-5A64-B1CD-A465C0214C6A
+* Model Name: MacBook Pro
+* Processor Name: Intel Core i5
+* Processor Speed:  2.4 GHz
+* Number of Processors: 1
+* Total Number of Cores:  2
+* L2 Cache (per Core):  256 KB
+* L3 Cache: 3 MB
+* Memory: 16 GB
 
 Hard Disk info:
->  Device Name:  APPLE SSD SD0256F
-  Media Name: APPLE SSD SD0256F Media
-  Size: 250.14 GB (250,140,434,432 bytes)
-  Medium Type:  SSD
+* Device Name:  APPLE SSD SD0256F
+* Media Name: APPLE SSD SD0256F Media
+* Size: 250.14 GB (250,140,434,432 bytes)
+* Medium Type:  SSD
 
 Times:
-`npm run build:prod:tinymce`: `real 4m44.138s`
-`npm run build:prod`: `real 0m30.193s`
+* `npm run build:prod:tinymce`: `real 4m44.138s`
+* `npm run build:prod`: `real 0m30.193s`
 
 The main issue seems to happen at this point in the build:
 ```
