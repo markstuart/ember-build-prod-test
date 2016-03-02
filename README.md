@@ -1,53 +1,41 @@
 # Ember-build-prod-test
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+If you `npm run build:prod` you'll see a lot of console output. When it completes, you can see the time that it took in the final output.
 
-## Prerequisites
+The time difference between `npm run build:prod:tinymce` and `npm run build:prod` is significant.
 
-You will need the following things properly installed on your computer.
+On my machine:
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+System info
+>  Model Name:  MacBook Pro
+  Model Identifier: MacBookPro11,1
+  Processor Name: Intel Core i5
+  Processor Speed:  2.4 GHz
+  Number of Processors: 1
+  Total Number of Cores:  2
+  L2 Cache (per Core):  256 KB
+  L3 Cache: 3 MB
+  Memory: 16 GB
+  Boot ROM Version: MBP111.0138.B16
+  SMC Version (system): 2.16f68
+  Serial Number (system): C02M30R3FH04
+  Hardware UUID:  A1B27850-91C2-5A64-B1CD-A465C0214C6A
 
-## Installation
+Hard Disk info:
+>  Device Name:  APPLE SSD SD0256F
+  Media Name: APPLE SSD SD0256F Media
+  Size: 250.14 GB (250,140,434,432 bytes)
+  Medium Type:  SSD
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+Times:
+`npm run build:prod:tinymce`: `real 4m44.138s`
+`npm run build:prod`: `real 0m30.193s`
 
-## Running / Development
+The main issue seems to happen at this point in the build:
+```
+  broccoli-merge-trees:TreeMerger (allTrees) build:
+ { count: 1, in: '12ms', mergeTime: '0ms', applyPatchTime: '12ms', treeTime: '0ms', entries: 7, indices: 7, overwrite: true } +0ms
+```
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+In both cases the build appears to hang for a period of time at this point, but in the `build:prod:tinymce` version it hangs for a *much* longer time.
 
